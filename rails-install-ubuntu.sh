@@ -11,10 +11,17 @@ sudo apt-get install imagemagick --fix-missing -y
 
 echo "Installs RVM (Ruby Version Manager) for handling Ruby installation"
 curl -L get.rvm.io | bash -s stable
-echo "
-# RVM
-[[ -s '/Users/`whoami`/.rvm/scripts/rvm' ]] && source '/Users/`whoami`/.rvm/scripts/rvm'" >> ~/.bash_profile
-source ~/.bash_profile
+# RVM integration with bash in OSX is like
+# echo "
+# [[ -s '/Users/`whoami`/.rvm/scripts/rvm' ]] && source '/Users/`whoami`/.rvm/scripts/rvm'" >> ~/.bash_profile
+# source ~/.bash_profile
+
+# RVM integration with bash in Ubuntu is like
+# echo "
+# [[ -s '$HOME/.rvm/scripts/rvm' ]] && source '$HOME/.rvm/scripts/rvm'" >> ~/.bashrc
+# But is done automagically by rvm itself
+
+source ~/.bashrc
 
 echo "Installs Ruby"
 rvm install 1.9.3-p125
@@ -29,8 +36,10 @@ sudo apt-get install gedit -y
 echo -e "\n- - - - - -\n"
 echo -e "Now we are going to print some information to check that everything is done:\n"
 
-echo -n "Should be brew 0.8 or higher:       brew "
-brew -v
+# brew in ubuntu?
+# echo -n "Should be brew 0.8 or higher:       brew "
+# brew -v
+
 echo -n "Should be sqlite 3.7.3 or higher: sqlite "
 sqlite3 --version
 echo -n "Should be rvm 1.6.32 or higher:          "
