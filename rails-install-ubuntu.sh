@@ -11,17 +11,7 @@ sudo apt-get install imagemagick --fix-missing -y
 
 echo "Installs RVM (Ruby Version Manager) for handling Ruby installation"
 curl -L get.rvm.io | bash -s stable
-# RVM integration with bash in OSX is like
-# echo "
-# [[ -s '/Users/`whoami`/.rvm/scripts/rvm' ]] && source '/Users/`whoami`/.rvm/scripts/rvm'" >> ~/.bash_profile
-# source ~/.bash_profile
-
-# RVM integration with bash in Ubuntu is like
-# echo "
-# [[ -s '$HOME/.rvm/scripts/rvm' ]] && source '$HOME/.rvm/scripts/rvm'" >> ~/.bashrc
-# But is done automagically by rvm itself
-
-source ~/.bashrc
+source ~/.rvm/scripts/rvm
 
 echo "Installs Ruby"
 rvm install 1.9.3-p125

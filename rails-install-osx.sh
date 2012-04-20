@@ -6,10 +6,7 @@ brew update
 
 echo "Installs RVM (Ruby Version Manager) for handling Ruby installation"
 curl -L get.rvm.io | bash -s stable
-echo "
-# RVM
-[[ -s '/Users/`whoami`/.rvm/scripts/rvm' ]] && source '/Users/`whoami`/.rvm/scripts/rvm'" >> ~/.bash_profile
-source ~/.bash_profile
+source ~/.rvm/scripts/rvm
 
 echo "Install Ruby"
 rvm install 1.9.3-p125
