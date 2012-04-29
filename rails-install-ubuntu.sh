@@ -15,7 +15,7 @@ source ~/.rvm/scripts/rvm
 
 echo "Installs Ruby"
 rvm install 1.9.3-p194
-rvm use 1.9.3-p94 --default
+rvm use 1.9.3-p194 --default
 
 gem install bundler --no-rdoc --no-ri
 gem install rails --no-rdoc --no-ri
