@@ -5,7 +5,7 @@ echo "Installs Homebrew for installing other software"
 brew update
 
 echo "Installs RVM (Ruby Version Manager) for handling Ruby installation"
-curl -L get.rvm.io | bash -s stable
+curl -kL get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 
 echo "Install Ruby"
