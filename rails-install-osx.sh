@@ -28,7 +28,18 @@ rm -rf $tmpdir
 echo "[[ -s $HOME/.tokaidoapp/tokaidoapp.sh ]] && source $HOME/.tokaidoapp/tokaidoapp.sh" >> $HOME/.profile
 source $HOME/.tokaidoapp/tokaidoapp.sh
 
-ruby -v
+echo -e "\n- - - - - - - - - \n"
+echo -e "Now we are going to print some information to check that everything is done:\n"
+
+echo    " ,;;;, ,;;;,"
+echo -n ";;;' ';' ';;; Should be ruby 1.9.3p194: "
+ruby -v | cut -c 1-14
+echo    ";;;       ;;;"
+echo -n " ';;,   ,;;'  Should be Rails 3.2.3: "
 rails -v
+echo    "   ';;,;;'"
+echo    "     ';'"
+echo -e "\n- - - - - - - - - \n"
+
 echo "Done!"
 echo "Please restart your terminal."
