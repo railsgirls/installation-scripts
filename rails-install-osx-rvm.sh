@@ -4,6 +4,9 @@ echo "Installs Homebrew for installing other software"
 /usr/bin/ruby -e "$(/usr/bin/curl -fksSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
 brew update
 
+echo "Installs Git"
+brew install git
+
 echo "Installs RVM (Ruby Version Manager) for handling Ruby installation"
 curl -kL get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
@@ -20,6 +23,8 @@ echo -e "Now we are going to print some information to check that everything is 
 
 echo -n "Should be brew 0.8 or higher:       brew "
 brew -v
+echo -n "Should be git 1.7.7 or higher:           "
+git --version
 echo -n "Should be sqlite 3.7.3 or higher: sqlite "
 sqlite3 --version
 echo -n "Should be rvm 1.6.32 or higher:          "
