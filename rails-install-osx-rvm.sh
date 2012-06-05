@@ -4,6 +4,9 @@ echo "Installs Homebrew for installing other software"
 /usr/bin/ruby -e "$(/usr/bin/curl -fksSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
 brew update
 
+echo "Installs Git"
+brew install git
+
 echo "Installs RVM (Ruby Version Manager) for handling Ruby installation"
 curl -kL get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
@@ -20,6 +23,8 @@ echo -e "Now we are going to print some information to check that everything is 
 
 echo -n "Should be brew 0.8 or higher:       brew "
 brew -v
+echo -n "Should be git 1.7.7 or higher:           "
+git --version
 echo -n "Should be sqlite 3.7.3 or higher: sqlite "
 sqlite3 --version
 echo -n "Should be rvm 1.6.32 or higher:          "
@@ -30,8 +35,8 @@ echo -n "Should be Rails 3.2.2 or higher:         "
 rails -v
 echo -e "\n- - - - - -\n"
 
-echo "If the versions match, everything is installed correctly. If the versions 
-don't match or errors are shown, something went wrong with the automated process 
+echo "If the versions match, everything is installed correctly. If the versions
+don't match or errors are shown, something went wrong with the automated process
 and we will help you do the installation the manual way at the event.
 
 Congrats!"
