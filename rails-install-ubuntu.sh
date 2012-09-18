@@ -35,7 +35,7 @@ sqlite3 --version
 echo -n "Should be rvm 1.6.32 or higher:          "
 rvm --version | sed '/^.*$/N;s/\n//g' | cut -c 1-10
 echo -n "Should be ruby 1.9.3-p194:                "
-ruby -v | -d " " -f 2
+ruby -v
 echo -n "Should be Rails 3.2.2 or higher:         "
 rails -v
 echo -e "\n- - - - - -\n"
