@@ -10,4 +10,10 @@ To install Ruby on Rails development environment you just need to copy and paste
 
     bash < <(curl -s  https://raw.github.com/railsgirls/installation-scripts/master/rails-install-ubuntu.sh)
 
+## Skript for Arch Linux
+
+Run with
+
+    bash < <(curl -s  https://raw.github.com/railsgirls/installation-scripts/master/rails-install-arch.sh)
+
 
