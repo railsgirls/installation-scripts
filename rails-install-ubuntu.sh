@@ -32,7 +32,7 @@ echo -e "Now we are going to print some information to check that everything is 
 
 echo -n "Should be sqlite 3.7.3 or higher: sqlite "
 sqlite3 --version
-echo -n "Should be rvm 1.6.5 or higher:          "
+echo -n "Should be rvm 1.6.32 or higher:          "
 rvm --version | sed '/^.*$/N;s/\n//g' | cut -c 1-10
 echo -n "Should be ruby 1.9.3-p194:                "
 ruby -v | cut -d " " -f 2
