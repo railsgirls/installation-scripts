@@ -1,7 +1,7 @@
 set -e
 
 echo "Installs Homebrew for installing other software"
-/usr/bin/ruby -e "$(/usr/bin/curl -fksSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
+/usr/bin/ruby -e "$(/usr/bin/curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 brew update
 
 echo "Installs Git"
