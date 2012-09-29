@@ -2,10 +2,13 @@ set -e
 
 echo "Installs Homebrew for installing other software"
 /usr/bin/ruby -e "$(/usr/bin/curl -fsSkL raw.github.com/mxcl/homebrew/go)"
-brew update
 
 echo "Installs Git"
 brew install git
+
+echo "Updates Homebrew"
+brew update
+
 
 echo "Installs RVM (Ruby Version Manager) for handling Ruby installation"
 curl -kL get.rvm.io | bash -s stable
