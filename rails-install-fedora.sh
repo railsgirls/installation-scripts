@@ -27,8 +27,10 @@ echo "Installs text editor"
 sudo yum install gedit -y
 
 # Make sure RVM, Ruby and Rails are on the user's path
-echo "export PATH=$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.9.3-p392/bin:\$PATH # Added by Rails Girls install script" >> ~/.bashrc
+echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> ~/.bashrc
+set +e
 source ~/.bashrc
+set -e
 
 echo -n "Should be sqlite 3.7.3 or higher: sqlite "
 sqlite3 --version
