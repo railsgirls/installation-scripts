@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -e
 
 echo "Updates packages. Asks for your password."
