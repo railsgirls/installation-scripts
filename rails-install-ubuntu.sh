@@ -13,7 +13,7 @@ sudo apt-get install imagemagick --fix-missing -y
 
 echo "Installs RVM (Ruby Version Manager) for handling Ruby installation"
 curl -L get.rvm.io | bash -s stable
-source ~/.rvm/scripts/rvm
+. ~/.rvm/scripts/rvm
 
 echo "Installs Ruby"
 rvm install 1.9.3-p194
