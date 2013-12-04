@@ -22,9 +22,6 @@ rvm use 1.9.3-p194 --default
 gem install bundler --no-rdoc --no-ri
 gem install rails --no-rdoc --no-ri
 
-echo "Installs text editor"
-sudo apt-get install gedit -y
-
 echo -e "\n- - - - - -\n"
 echo -e "Now we are going to print some information to check that everything is done:\n"
 
