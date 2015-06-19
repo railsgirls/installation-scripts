@@ -11,8 +11,10 @@ sudo apt-get install build-essential bison openssl libreadline6 libreadline6-dev
 echo "Installs ImageMagick for image processing"
 sudo apt-get install imagemagick --fix-missing -y
 
+# changed hkp://keys.gnupg.net to 212.51.156.193 (same site)
+# this prevents host not found errors
 echo "Installs RVM (Ruby Version Manager) for handling Ruby installation"
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+gpg --keyserver 212.51.156.193 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s -- --version 1.26.11
 source ~/.rvm/scripts/rvm
 
