@@ -3,7 +3,7 @@
 set -e
 
 echo "Adding PPA for up-to-date Node.js runtime. Give your password when asked."
-curl -sL https://deb.nodesource.com/setup_dev | sudo bash -
+wget -O - https://deb.nodesource.com/setup_dev | sudo bash -
 
 echo "Updates packages. Asks for your password."
 sudo apt-get update -y
