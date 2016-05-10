@@ -2,7 +2,7 @@
 
 set -e
 
-if ! greq -q xenial /etc/lsb-release
+if ! grep -q xenial /etc/lsb-release
 then
   echo "Adding PPA for up-to-date Node.js runtime. Give your password when asked."
   sudo add-apt-repository ppa:chris-lea/node.js
