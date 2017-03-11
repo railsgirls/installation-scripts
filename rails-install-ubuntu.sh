@@ -26,8 +26,8 @@ curl -sSL https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 
 echo "Installs Ruby"
-rvm install 2.2.2
-rvm use 2.2.2 --default
+rvm install 2.4.0
+rvm use 2.4.0 --default
 
 echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 gem install bundler
