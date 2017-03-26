@@ -2,14 +2,7 @@
 
 set -e
 
-if ! grep -q xenial /etc/lsb-release
-then
-  echo "Adding PPA for up-to-date Node.js runtime. Give your password when asked."
-  sudo add-apt-repository ppa:chris-lea/node.js
-else
-  : # Xenial not (yet, as of April 2016) supported by that ppa,
-    # use default distro node.js.
-fi
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 
 echo "Updates packages. Asks for your password."
 sudo apt-get update -y
