@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if
+  [[ "${USER:-}" == "root" ]]
+then
+  echo "This script works only with normal user, it wont work with root, please log in as normal user and try again." >&2
+  exit 1
+fi
+
 set -e
 
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
