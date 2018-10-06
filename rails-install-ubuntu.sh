@@ -27,8 +27,8 @@ curl -sSL https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 
 echo "Installs Ruby"
-rvm install 2.4.1
-rvm use 2.4.1 --default
+rvm install 2.5.1
+rvm use 2.5.1 --default
 
 echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 gem install bundler
@@ -42,24 +42,24 @@ echo -n "Should be sqlite 3.8.1 or higher: sqlite "
 sqlite3 --version
 echo -n "Should be rvm 1.26.11 or higher:         "
 rvm --version | sed '/^.*$/N;s/\n//g' | cut -c 1-11
-echo -n "Should be ruby 2.4.1:                "
+echo -n "Should be ruby 2.5.1:                "
 ruby -v | cut -d " " -f 2
 echo -n "Should be Rails 4.2.1 or higher:         "
 rails -v
 echo -e "\n- - - - - -\n"
 
-echo "If the versions match, everything is installed correctly. If the versions 
-don't match or errors are shown, something went wrong with the automated process 
+echo "If the versions match, everything is installed correctly. If the versions
+don't match or errors are shown, something went wrong with the automated process
 and we will help you do the installation the manual way at the event.
 
 Congrats!
-                                                                                 
-Make sure that all works well by running the application generator command:         
-    $ rails new railsgirls                                                       
-                                                                                 
-If you encounter the message:                                                    
-    The program 'rails' is currently not installed.                              
-                                                                                 
+
+Make sure that all works well by running the application generator command:
+    $ rails new railsgirls
+
+If you encounter the message:
+    The program 'rails' is currently not installed.
+
 It is just a hiccup with the shell, solutions:                                   
-    $ source ~/.rvm/scripts/rvm                                                  
+    $ source ~/.rvm/scripts/rvm
     Allow login shell, example http://rvm.io/integration/gnome-terminal/"
