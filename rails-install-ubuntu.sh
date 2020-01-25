@@ -29,10 +29,10 @@ curl -sSL https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 
 echo "Installs Ruby"
-rvm install 2.6.3
-rvm use 2.6.3 --default
+rvm install 2.7.0
+rvm use 2.7.0 --default
 
-echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+echo "gem: --no-document" > ~/.gemrc
 gem install rails
 
 echo -e "\n- - - - - -\n"
@@ -41,11 +41,11 @@ echo -e "Now we are going to print some information to check that everything is 
 
 echo -n "Should be sqlite 3.22.0 or higher: sqlite "
 sqlite3 --version
-echo -n "Should be rvm 1.29.8 or higher:         "
+echo -n "Should be rvm 1.29.9 or higher:         "
 rvm --version | sed '/^.*$/N;s/\n//g' | cut -c 1-11
-echo -n "Should be ruby 2.6.3:                "
+echo -n "Should be ruby 2.7.0p0:                 "
 ruby -v | cut -d " " -f 2
-echo -n "Should be Rails 5.2.3 or higher:         "
+echo -n "Should be Rails 6.0.2 or higher:        "
 rails -v
 echo -e "\n- - - - - -\n"
 
