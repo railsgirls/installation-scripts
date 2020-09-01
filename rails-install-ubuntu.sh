@@ -7,7 +7,6 @@ then
   exit 1
 fi
 
-bash --login # enables rvm use --default
 set -e
 
 echo "Updates packages. Asks for your password."
@@ -65,5 +64,3 @@ If you encounter the message:
 It is just a hiccup with the shell, solutions:                                   
     $ source ~/.rvm/scripts/rvm
     Allow login shell, example http://rvm.io/integration/gnome-terminal/"
-
-exit
