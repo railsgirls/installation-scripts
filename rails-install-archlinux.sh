@@ -14,7 +14,7 @@ sudo pacman -S --noconfirm imagemagick
 
 echo "Installs RVM (Ruby Version Manager) for handling Ruby installation"
 # Retrieve the GPG key.
-curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
 curl -sSL https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 
