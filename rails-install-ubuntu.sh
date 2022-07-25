@@ -29,8 +29,8 @@ curl -sSL https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 
 echo "Installs Ruby"
-rvm install 2.6.3
-rvm use 2.6.3 --default
+rvm install 3.1.2
+rvm use 3.1.2 --default
 
 echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 gem install rails
@@ -43,9 +43,9 @@ echo -n "Should be sqlite 3.22.0 or higher: sqlite "
 sqlite3 --version
 echo -n "Should be rvm 1.29.8 or higher:         "
 rvm --version | sed '/^.*$/N;s/\n//g' | cut -c 1-11
-echo -n "Should be ruby 2.6.3:                "
+echo -n "Should be ruby 3.0 or higher:                "
 ruby -v | cut -d " " -f 2
-echo -n "Should be Rails 5.2.3 or higher:         "
+echo -n "Should be Rails 7.0 or higher:         "
 rails -v
 echo -e "\n- - - - - -\n"
 
@@ -61,6 +61,6 @@ Make sure that all works well by running the application generator command:
 If you encounter the message:
     The program 'rails' is currently not installed.
 
-It is just a hiccup with the shell, solutions:                                   
+It is just a hiccup with the shell, solutions:
     $ source ~/.rvm/scripts/rvm
     Allow login shell, example http://rvm.io/integration/gnome-terminal/"
