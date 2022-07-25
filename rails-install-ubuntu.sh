@@ -45,7 +45,7 @@ echo -n "Should be rvm 1.29.8 or higher:         "
 rvm --version | sed '/^.*$/N;s/\n//g' | cut -c 1-11
 echo -n "Should be ruby 3.0 or higher:                "
 ruby -v | cut -d " " -f 2
-echo -n "Should be Rails 5.2.3 or higher:         "
+echo -n "Should be Rails 7.0 or higher:         "
 rails -v
 echo -e "\n- - - - - -\n"
 
