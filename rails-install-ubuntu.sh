@@ -1,13 +1,13 @@
 #!/bin/bash
 
+set -eu
+
 if
   [[ "${USER:-}" == "root" ]]
 then
   echo "This script works only with normal user, it wont work with root, please log in as normal user and try again." >&2
   exit 1
 fi
-
-set -e
 
 echo "Updates packages. Asks for your password."
 sudo apt-get update -y
