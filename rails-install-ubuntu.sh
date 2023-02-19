@@ -33,7 +33,7 @@ rvm install 3.1.2
 rvm use 3.1.2 --default
 
 echo "gem: --no-ri --no-rdoc" > ~/.gemrc
-gem install rails
+gem install bundler rails
 
 echo -e "\n- - - - - -\n"
 echo -e "Now we are going to print some information to check that everything is done:\n"
