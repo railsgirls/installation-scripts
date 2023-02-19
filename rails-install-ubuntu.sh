@@ -9,7 +9,7 @@ then
   exit 1
 fi
 
-echo "Updates packages. Asks for your password."
+echo "Update packages. Asks for your password. Please enter your password."
 sudo apt-get update -y
 
 echo "Install packages. Enter your password when asked."
@@ -19,7 +19,7 @@ echo "Install Node.js"
 sudo apt-get install -y snapd
 sudo snap install node --classic --channel=18
 
-echo "Installs ImageMagick for image processing"
+echo "Install ImageMagick for image processing"
 sudo apt-get install imagemagick --fix-missing -y
 
 echo "Install rbenv (Ruby version manager) for handling the Ruby installation"
@@ -57,8 +57,7 @@ gem install bundler rails
 echo -e "\n- - - - - -\n"
 echo -e "Now we are going to print some information to check that everything is done:\n"
 
-
-echo -n "Should be sqlite 3.22.0 or higher: sqlite "
+echo -n "Should be SQLite 3.22.0 or higher: sqlite "
 sqlite3 --version
 echo -n "Should be Ruby 3.1.3 or higher:                "
 ruby -v | cut -d " " -f 2
