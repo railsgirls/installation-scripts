@@ -22,16 +22,35 @@ sudo snap install node --classic --channel=18
 echo "Installs ImageMagick for image processing"
 sudo apt-get install imagemagick --fix-missing -y
 
-echo "Installs RVM (Ruby Version Manager) for handling Ruby installation"
-# Retrieve the GPG key.
-curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
-curl -sSL https://get.rvm.io | bash -s stable
-source ~/.rvm/scripts/rvm
+echo "Install rbenv (Ruby version manager) for handling the Ruby installation"
+echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 
-echo "Installs Ruby"
-rvm install 3.1.2
-rvm use 3.1.2 --default
+RBENV_INSTALL_PATH="$HOME/.rbenv"
+if [ -d "$RBENV_INSTALL_PATH" ]; then
+  echo "rbenv already installed"
+else
+  curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
 
+  echo "Configuring rbenv for your Shell"
+  if [[ "$SHELL" == *"bash" ]]; then
+    echo 'eval "$($HOME/.rbenv/bin/rbenv init - bash)"' >> ~/.bashrc
+  elif [[ "$SHELL" == *"zsh" ]]; then
+    echo 'eval "$($HOME/.rbenv/bin/rbenv init - zsh)"' >> ~/.zshrc
+  else
+    echo "Unknown Shell. Please configure rbenv manually."
+    echo "Please visit: https://github.com/rbenv/rbenv"
+  fi
+fi
+
+echo "Load rbenv config in install script"
+eval "$($HOME/.rbenv/bin/rbenv init - bash)"
+
+echo "Install Ruby"
+RUBY_VERSION=3.1.3
+rbenv install "$RUBY_VERSION"
+rbenv global "$RUBY_VERSION"
+
+echo "Install Rails"
 echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 gem install bundler rails
 
@@ -41,9 +60,7 @@ echo -e "Now we are going to print some information to check that everything is 
 
 echo -n "Should be sqlite 3.22.0 or higher: sqlite "
 sqlite3 --version
-echo -n "Should be rvm 1.29.8 or higher:         "
-rvm --version | sed '/^.*$/N;s/\n//g' | cut -c 1-11
-echo -n "Should be ruby 3.0 or higher:                "
+echo -n "Should be Ruby 3.1.3 or higher:                "
 ruby -v | cut -d " " -f 2
 echo -n "Should be Rails 7.0 or higher:         "
 rails -v
@@ -55,12 +72,6 @@ and we will help you do the installation the manual way at the event.
 
 Congrats!
 
-Make sure that all works well by running the application generator command:
-    $ rails new railsgirls
-
-If you encounter the message:
-    The program 'rails' is currently not installed.
-
-It is just a hiccup with the shell, solutions:
-    $ source ~/.rvm/scripts/rvm
-    Allow login shell, example http://rvm.io/integration/gnome-terminal/"
+Open a new Terminal tab/window and make sure that all works well
+by running the application generator command:
+    $ rails new railsgirls"
