@@ -23,7 +23,6 @@ echo "Install ImageMagick for image processing"
 sudo apt-get install imagemagick --fix-missing -y
 
 echo "Install rbenv (Ruby version manager) for handling the Ruby installation"
-echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 
 RBENV_INSTALL_PATH="$HOME/.rbenv"
 if [ -d "$RBENV_INSTALL_PATH" ]; then
